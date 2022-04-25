@@ -7,7 +7,7 @@ import { ProtectedRoute } from "./components/PrivateRoute";
 import { Navbar } from "./components/Navbar";
 import { Logout } from "./components/Logout";
 import { Routes,Route } from "react-router-dom";
-import "/App.css"
+import "./App.css"
 function App() {
   return (
     <div className="App">
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/employees' element={<ProtectedRoute><EmployeeList /></ProtectedRoute>}></Route>
+        <Route path='/employees' element={<EmployeeList />}></Route>
         <Route path='/employees/:id' element={<ProtectedRoute><EmployeeDetails /></ProtectedRoute>}></Route>
         <Route path='/admin' element={<ProtectedRoute><Admin /></ProtectedRoute>}></Route>
         <Route path='/logout' element={<Logout />}></Route>

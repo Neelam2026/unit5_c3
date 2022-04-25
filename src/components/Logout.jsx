@@ -8,9 +8,6 @@ export const Logout = () => {
   useEffect(()=>{
      toggleAuth()
   },[])
-  
 
-  return <div>
-    <Navigate to="/"></Navigate>
-  </div>;
+  return <Navigate to="/"></Navigate>
 };

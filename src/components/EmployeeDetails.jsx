@@ -5,13 +5,10 @@ import {  useParams } from "react-router-dom"
 export const EmployeeDetails = () => {
   const {id} = useParams()
   const [user,setUser]=useState({})
-  
 
   useEffect(()=>{
     axios.get(`http://localhost:8080/employee/${id}`).then(({data})=>{
      setUser(data)
-
-    
     })
 },[])
 
@@ -30,10 +27,10 @@ export const EmployeeDetails = () => {
         Status: <b className="status">user status:{user.status} </b>
         Title: <b className="title">user title:{user.title}</b>
         {/* Show this button only if user is not already terminated (users status is working) */}
-        {user.status=="working" ? <button className="fire">Fire Employee</button> : ""}
+        {user.status=="working" ? <button className="fire">Fire Employee</button> : null}
         
         {/* Show this button only if user is not already team lead or terminated */}
-        {(user.status!=="terminated"|| user.title!=="Team Lead") ? <button className="promote">promote</button> :""}
+        {(user.status!=="terminated"|| user.title!=="Team Lead") ? <button className="promote">promote</button> :null}
         
       </div>
     );

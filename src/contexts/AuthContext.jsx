@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) =>{
     const [isAuth,setIsAuth] = useState(false);
     const toggleAuth =()=>{
-        if(isAuth===false){
+        if(isAuth==false){
             setIsAuth(true)
         }
         else{
